@@ -115,4 +115,7 @@ COPY templates /opt/service/templates/.
 # RUN set -ex; \
 # 	chmod +x /opt/prep-pip/prep-pipeline.sh
 
-# CMD ["python3", "/opt/service/app.py"]
+EXPOSE 5555/tcp
+
+
+CMD ["python3", "/opt/service/app.py"]
