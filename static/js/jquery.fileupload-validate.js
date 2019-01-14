@@ -54,7 +54,7 @@
             // against either file type or file name:
             acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
             // The maximum allowed file size in bytes:
-            maxFileSize: 10000000, // 10 MB
+            maxFileSize: 1000000000000000, // 10 MB
             // The minimum allowed file size in bytes:
             minFileSize: undefined, // No minimal file size
             // The limit of files to be uploaded:

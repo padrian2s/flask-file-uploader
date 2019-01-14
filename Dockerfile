@@ -6,6 +6,8 @@
 
 FROM buildpack-deps:jessie
 
+#EXPOSE 5000/tcp
+
 # ensure local python is preferred over distribution python
 ENV PATH /usr/local/bin:$PATH
 
@@ -94,6 +96,8 @@ RUN set -ex; \
 	\
 	mkdir -p /opt/service/ \
 	\
+	mkdir -p /opt/service/data \
+	\
 	mkdir -p /opt/service/lib \
 	\
 	mkdir -p /opt/service/static \
@@ -115,7 +119,5 @@ COPY templates /opt/service/templates/.
 # RUN set -ex; \
 # 	chmod +x /opt/prep-pip/prep-pipeline.sh
 
-EXPOSE 5555/tcp
-
-
+WORKDIR "/opt/service/"
 CMD ["python3", "/opt/service/app.py"]
